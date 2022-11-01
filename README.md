@@ -1,9 +1,9 @@
 # Penetration Testing
 ###### Tulisan ini didedikasikan untuk para anggota grup [**Pentesting Indonesia**](https://t.me/PentestingIndonesia) di [Telegram](https://t.me/KamarKamsib). Github ini ada berisikan materi, konsep, best practice, contoh dokumen, hingga tools yang sering digunakan. Cekidot!
 
-> Kontributor:
-
+## Kontributor:
 - [rad1zly](https://github.com/rad1zly)
+- [anton](https://github.com/antonlepari)
 - in progres ...
 - in progres ...
 
