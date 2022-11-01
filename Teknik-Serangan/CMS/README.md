@@ -55,11 +55,37 @@ Kemudian berikut cara melakukan exploitnya:
     </methodCall>
     ```
 
-## Teknik Serangan pada platform Adobe Experience Manager
+## Teknik Serangan pada platform Adobe Experience Manager (AEM)
+Berikut merupakan teknik serangan pada platform Adobe Experience Manager (AEM)
+### Tools yang bisa digunakan untuk mendeteksi
++ [aem-hacker](https://github.com/0ang3el/aem-hacker)
++ [aemscan](https://github.com/Raz0r/aemscan)
+
+### Wordlist untuk melakukan *fuzzing* AEM
++ [wordlist_aem.txt](https://raw.githubusercontent.com/clarkvoss/AEM-List/main/paths)
+
+### Sumber
++ *[Approaching AEM](https://www.bugcrowd.com/resources/webinar/aem-hacker-approaching-adobe-experience-manager-web-apps/)*
++ [Teknik Mengamankan AEM](https://www.slideshare.net/0ang3el/securing-aem-webapps-by-hacking-them)
 
 ## Teknik Serangan pada platform Drupal
-
+Berikut merupakan teknik serangan pada platform Drupal. Lakukan *fuzzing* dengan menggunakan *intruder* pada Burpsuite pada ```/node/$``` dimana ```'$'``` adalah sebuah nomor (contohnya dari 1 hingga 1000 misalnya). Dari sana anda memungkinkan menemukan halaman tersembunyi seperti test, dev, admin, dan lain sebagainya yang tidak bisa dilihat dari *search engine*.
+### Sumber
++ [Drupal](https://0xblackbird.github.io/blog/post1)
 ## Teknik Serangan pada platform Moodle
+Berikut merupakan teknik serangan pada platform Moodle.
+### Tool untuk deteksi
+1. [Wappalyzer](https://www.wappalyzer.com/)
+2. [WhatRuns](https://www.whatruns.com/)
+3. [BuildWith](https://builtwith.com/)
+
+### Payload Exploit
+Berikut merupakan payload exploit yang bisa digunakan saat menemukan platform Moodle.
+* Menginjeksi XSS pada redirect url
+``` 
+https://MOODLE.TARGET.COM/mod/lti/auth.php?redirect_uri=javascript:alert(‘PAYLOAD’) 
+```
+* Menggunakan Template Nuclei -> [Moodle XSS Template](https://github.com/projectdiscovery/nuclei-templates/blob/master/vulnerabilities/moodle/moodle-xss.yaml)
 
 ## Author
 **[rad1zly](https://github.com/rad1zly)**
