@@ -13,10 +13,11 @@ Content Management System (CMS) adalah sebuah platform software yang yang memung
 Berikut merupakan beberapa *security misconfiguration* yang biasa terjadi pada platform Wordpress beserta *tools* yang bisa digunakan untuk mendeteksi terjadinya kerentanan tersebut. 
 
 ### Tool untuk deteksi
-1. Wappalyzer
-2. WhatRuns
-3. BuildWith
-4. WpScan
+1. [Wappalyzer](https://www.wappalyzer.com/)
+2. [WhatRuns](https://www.whatruns.com/)
+3. [BuildWith](https://builtwith.com/)
+4. [WpScan](https://github.com/wpscanteam/wpscan)
+5. [XMLRPC-Scan](https://github.com/nullfil3/xmlrpc-scan)
 
 ### xmlrpc.php
 Ini merupakan kerentanan paling umum pada wordpress, cara mendeteksi kerentanan tersebut adalah sebagai berikut :
