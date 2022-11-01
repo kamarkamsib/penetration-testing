@@ -4,10 +4,10 @@
 Content Management System (CMS) adalah sebuah platform software yang yang memungkinkan pengguna untuk membangun dan mengelola situs web dengan pengetahuan dan sumber daya teknis yang terbatas. Ini memungkinkan pengguna untuk membuat, mengelola, dan memodifikasi konten di situs web dengan Graphic User Interface (GUI) yang membuat interaksi menjadi user friendly tanpa memerlukan pengetahuan teknis apa pun.
 
 ## Beberapa Platform yang **Mungkin** rentan akan CMS
-1. Wordpress
-2. Adobe Experience Manager
-3. Drupal
-4. Moodle
+1. [Wordpress](https://github.com/rad1zly/penetration-testing/blob/main/Teknik-Serangan/CMS/README.md#teknik-serangan-pada-platform-wordpress)
+2. [Adobe Experience Manager](https://github.com/rad1zly/penetration-testing/tree/main/Teknik-Serangan/CMS#teknik-serangan-pada-platform-adobe-experience-manager)
+3. [Drupal](https://github.com/rad1zly/penetration-testing/tree/main/Teknik-Serangan/CMS#teknik-serangan-pada-platform-drupal)
+4. [Moodle](https://github.com/rad1zly/penetration-testing/tree/main/Teknik-Serangan/CMS#teknik-serangan-pada-platform-moodle)
 
 ## Teknik Serangan pada platform Wordpress
 Berikut merupakan beberapa *security misconfiguration* yang biasa terjadi pada platform Wordpress beserta *tools* yang bisa digunakan untuk mendeteksi terjadinya kerentanan tersebut. 
@@ -20,7 +20,7 @@ Berikut merupakan beberapa *security misconfiguration* yang biasa terjadi pada p
 
 ### xmlrpc.php
 Ini merupakan kerentanan paling umum pada wordpress, cara mendeteksi kerentanan tersebut adalah sebagai berikut :
-* kunjungi site dari siteyangdituju.com/xmlrpc.php
+* kunjungi site dari ```siteyangdituju.com/xmlrpc.php```
 * Mendapatkan pesan error tentang *POST request only*
 
 Kemudian berikut cara melakukan exploitnya:
