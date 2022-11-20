@@ -13,6 +13,13 @@ Pentesting sebuah tes yang dilakukan dengan tujuan mencari kerenatanan pada sebu
 
 > Tetap haus dan jangan lupa berbagi.
 
+## Metodologi
+Beberapa metodologi pentest yang bisa dipakai, antara lain:
+
+* PTES
+* Lorem ipsum...
+* dst....
+
 ## OWASP
 > Dalam menyusun tulisan ini, @kamarkamsib menggunakan OWASP sebagai kiblat.
 > situs : [OWASP](https://owasp.org/www-project-top-ten/)
