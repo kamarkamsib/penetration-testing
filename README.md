@@ -4,8 +4,23 @@
 ## Kontributor:
 - [rad1zly](https://github.com/rad1zly)
 - [anton](https://github.com/antonlepari)
-- in progres ...
-- in progres ...
+- maybe it's you ...
+- maybe it's you ...
+
+## Outline
+
+- Apa sih [Penetration Testing](https://github.com/kamarkamsib/penetration-testing/) itu?
+- Emang siapa aja yang butuhin pentesting?
+- Lah kan udah ada bug bounty, terus pentesting buat apa?
+- Metodologi yang digunakan.
+- - Reconnaissance and Information Gathering
+- - Network Enumeration and Scanning
+- - Vulnerability Testing and Exploitation
+- Reporting 
+- OWASP
+- Gimana cara jadi Pentester?
+
+## Apa sih Penetration Testing itu?
 
 _Penetration testing, also called pen testing, goes a step ahead of vulnerability scanning in security assessment. Unlike vulnerability scanning, which examines the security of individual computers, network devices, or applications, penetration testing assesses the security model of the network as a whole. Penetration testing can reveal the potential consequences of a real attacker breaking into the accounts of network-to-network administrators, IT managers, and executives. It also sheds light on the security weaknesses missed in typical vulnerability scanning._ [EC-Council]
 
