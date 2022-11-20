@@ -1,0 +1,1 @@
+Jika direktori Pentesting didedikasikan khusus untuk grup Telegram kita. Maka, sub-direktori "kamarCTF" ini didedikasikan lebih khusus lagi. Untuk para penghuni Kamar CTF yang bahkan malam mingguan masih main CTF.
