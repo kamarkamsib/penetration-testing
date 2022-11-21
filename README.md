@@ -77,16 +77,20 @@ Kontrol Akses (_access control_) memberlakukan kebijakan sedemikian rupa sehingg
 * _Force browsing_ ke halaman yang diautentikasi sebagai pengguna yang tidak diautentikasi atau ke halaman dengan hak istimewa sebagai pengguna standar.
 
 #### A02 Cryptographic Failures 
-shifts up one position to #2, previously known as A3:2017-Sensitive Data Exposure, which was broad symptom rather than a root cause. The renewed name focuses on failures related to cryptography as it has been implicitly before. This category often leads to sensitive data exposure or system compromise.
+Menentukan terlebih dulu kebutuhan **Data Protection** antara **Data In transit** dan **Data At Rest**. Misalnya, kata sandi, nomor kartu kredit, catatan kesehatan, informasi pribadi, dan rahasia bisnis memerlukan perlindungan ekstra, terutama jika data tersebut termasuk dalam undang-undang privasi, misalnya Peraturan Perlindungan Data Umum (GDPR) UE, atau peraturan, misalnya, perlindungan data keuangan seperti Standar Keamanan Data PCI (PCI DSS).
 
 #### A03 Injection 
-slides down to the third position. 94% of the applications were tested for some form of injection with a max incidence rate of 19%, an average incidence rate of 3.37%, and the 33 CWEs mapped into this category have the second most occurrences in applications with 274k occurrences. Cross-site Scripting is now part of this category in this edition.
+Injek.
 
 #### A04 Insecure Design 
-is a new category for 2021, with a focus on risks related to design flaws. If we genuinely want to "move left" as an industry, we need more threat modeling, secure design patterns and principles, and reference architectures. An insecure design cannot be fixed by a perfect implementation as by definition, needed security controls were never created to defend against specific attacks.
+Desain yang tidak aman adalah kategori luas yang mewakili berbagai kelemahan, dinyatakan sebagai "desain kontrol yang hilang atau tidak efektif". Rancangan yang tidak aman bukanlah sumber dari semua kategori 10 risiko teratas lainnya. Ada perbedaan antara desain yang tidak aman dan implementasi yang tidak aman. 
+
+Kami membedakan antara cacat desain dan cacat implementasi karena suatu alasan, mereka memiliki akar penyebab dan perbaikan yang berbeda. Desain yang aman masih dapat memiliki cacat implementasi yang menyebabkan kerentanan yang dapat dieksploitasi. Desain yang tidak aman tidak dapat diperbaiki dengan implementasi yang sempurna karena menurut definisi, kontrol keamanan yang diperlukan tidak pernah dibuat untuk bertahan dari serangan tertentu. 
+
+Salah satu faktor yang berkontribusi terhadap desain yang tidak aman adalah kurangnya profil risiko bisnis yang melekat pada perangkat lunak atau sistem yang sedang dikembangkan, dan dengan demikian kegagalan untuk menentukan tingkat desain keamanan apa yang diperlukan.
 
 #### A05 Security Misconfiguration 
-moves up from #6 in the previous edition; 90% of applications were tested for some form of misconfiguration, with an average incidence rate of 4.5%, and over 208k occurrences of CWEs mapped to this risk category. With more shifts into highly configurable software, it's not surprising to see this category move up. The former category for A4:2017-XML External Entities (XXE) is now part of this risk category.
+Jangan salah konfigurasi.
 
 #### A06 Vulnerable and Outdated Components 
 was previously titled Using Components with Known Vulnerabilities and is #2 in the Top 10 community survey, but also had enough data to make the Top 10 via data analysis. This category moves up from #9 in 2017 and is a known issue that we struggle to test and assess risk. It is the only category not to have any Common Vulnerability and Exposures (CVEs) mapped to the included CWEs, so a default exploit and impact weights of 5.0 are factored into their scores.
