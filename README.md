@@ -20,16 +20,18 @@
 - OWASP
 - Gimana cara jadi Pentester?
 
-## Apa sih Penetration Testing itu?
+## 01. Apa sih Penetration Testing itu?
 
 Pentesting merupakan sebuah tes yang dilakukan dengan tujuan mencari kerenatanan pada sebua sistem. Sedikit berbeda dengan Vuln Scaning, Pentest menguji keamanan komputer individu, perangkat jaringan, atau aplikasi, pengujian penetrasi menilai model keamanan jaringan secara keseluruhan. Pentesting berbeda pula dengan kegiatan Bug Hunting atau Bug Bounty.
 
 > Tetap haus dan jangan lupa berbagi.
 
-## Lah kan udah ada bug bounty, terus pentesting buat apa?
+## 02. Emang siapa aja yang butuhin pentesting?
+
+## 03. Lah kan udah ada bug bounty, terus pentesting buat apa?
 Ada perbedaan bug bounty dengan pentesting.
 
-## Metodologi
+## 04. Metodologi
 Beberapa metodologi pentest yang bisa dipakai, antara lain:
 
 * PTES
@@ -45,9 +47,9 @@ Standar pelaksanaan pentesting terdiri dari tujuh (7) bagian utama. Ketujuh bagi
 ### Network Enumeration and Scanning
 ### Vulnerability Testing and Exploitation
 
-## Reporting
+## 05. Reporting
 
-## OWASP
+## 06. OWASP
 > Dalam menyusun tulisan ini, @kamarkamsib menggunakan OWASP sebagai kiblat.
 > situs : [OWASP](https://owasp.org/www-project-top-ten/)
 
@@ -108,7 +110,7 @@ was previously A10:2017-Insufficient Logging & Monitoring and is added from the 
 is added from the Top 10 community survey (#1). The data shows a relatively low incidence rate with above average testing coverage, along with above-average ratings for Exploit and Impact potential. This category represents the scenario where the security community members are telling us this is important, even though it's not illustrated in the data at this time.
 
 
-## Gimana cara jadi Pentester?
+## 07. Gimana cara jadi Pentester?
 
 #### XSS
 https://github.com/payloadbox/xss-payload-list
