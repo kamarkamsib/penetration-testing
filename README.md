@@ -32,6 +32,11 @@ Pentesting sebuah tes yang dilakukan dengan tujuan mencari kerenatanan pada sebu
 Beberapa metodologi pentest yang bisa dipakai, antara lain:
 
 * PTES
+
+Standar pelaksanaan pentesting terdiri dari tujuh (7) bagian utama. Ketujuh bagian ini mencakum semua hal terkait pentest ― mulai dari fase komunikasi awal dan alasan mengepa pentest dibutuhkan, hingga fase pengumpulan intelijen (intelligence gathering) dan pemodelan ancaman (threat modeling).
+
+* NIST CSF
+* OWASP Testing Framework
 * Lorem ipsum...
 * dst....
 
