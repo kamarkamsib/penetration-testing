@@ -163,6 +163,7 @@ is added from the Top 10 community survey (#1). The data shows a relatively low 
 * zzz
 
 ## 100. :desktop_computer: Persyaratan Pekerjaan (Umumnya)
+S
 * Modern penetration testing tools and methods
 * Konsep Network security
 * Konsep Web-based application security
@@ -176,5 +177,11 @@ is added from the Top 10 community survey (#1). The data shows a relatively low 
 * Memiliki pengetahuan terhadap peraturan yang diselenggarakan regulator dan IT Governance.
 * Mampu secara efektif memimpin tim pentester ketika proyek berjalan.
 * Mampu menjelaskan temuan pada pentest berikut rekomendasinya kepada user teknis maun non-teknis.
+J
+* Pengalaman dalam penilaian kerentanan dan pengujian penetrasi minimal 1 tahun
+* Mampu bekerja dalam tim, cepat belajar, sikap yang baik
+* Keterampilan komunikasi yang baik, mampu menulis atau berbicara dalam bahasa Inggris
+* Akrab dengan pengujian penetrasi dan laporan
+* Familiar dengan program CTF dan bug bounty hunter minimal 1 tahun
 
 ### 100.1 Daftar persyaratan kerja diolah dari lowongan Junior/Senior Penetration Tester di: PT Juke Solusi Teknologi, PT X, PT Z, ...
