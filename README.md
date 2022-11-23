@@ -13,10 +13,11 @@
 - Emang siapa aja yang butuhin pentesting?
 - Lah kan udah ada bug bounty, terus pentesting buat apa?
 - Metodologi yang digunakan.
+- Tahapan Umum
 - - Reconnaissance and Information Gathering
 - - Network Enumeration and Scanning
 - - Vulnerability Testing and Exploitation
-- Reporting 
+- - Reporting 
 - OWASP
 - Gimana cara jadi Pentester?
 
@@ -47,11 +48,41 @@ Standar pelaksanaan pentesting terdiri dari tujuh (7) bagian utama. Ketujuh bagi
 * Lorem ipsum...
 * dst....
 
-### Reconnaissance and Information Gathering
-### Network Enumeration and Scanning
-### Vulnerability Testing and Exploitation
+## 05 Tahapan Umum
 
-## 05. Reporting
+### 05.1 Reconnaissance dan Information Gathering
+Tujuan: Untuk menemukan informasi sebanyak mungkin mengenai target (baik itu individual ataupun organisasi). Pada tahap ini, SEBISA MUNGKIN dilakukan tanpa melalukan kontak langsung dengan jaringan target.
+
+Cara:
+- Menggunakan WHOIS
+- Google searching
+- Website browsing
+
+### 05.2 Network Enumeration and Scanning
+Tujuan:  Untuk menemukan layanan atau sistem apa saja yang dimiliki target. Khususnya sistem yang sedang berjalan (live hosts dan services).
+
+Cara: 
+- Melalukan scanning ke target menggunakan Nmap
+- DNS Querying
+- Route analysis (traceroute) 
+
+### 05.3 Vulnerability Testing and Exploitation
+Tujuan:  To check hosts for known vulnerabilities and to see if they are exploitable, as well as to assess the potential severity of said vulnerabilities.  
+
+Cara:  
+- Remote vulnerability scanning (Nessus, OpenVAS)
+- Active exploitation testing
+- - Login checking and bruteforcing
+- - Vulnerability exploitation (Metasploit, Core Impact)
+- - 0day and exploit discovery (Fuzzing, program analysis)
+- - Post exploitation techniques to assess severity (permission levels, backdoors, rootkits, etc)
+
+### 05.4 Reporting
+Tujuan:  To organize and document information found during the reconnaissance, network scanning, and vulnerability testing phases of a pentest.  
+
+Cara:  
+- Documentation tools (Dradis)
+- Organizes information by hosts, services, identified hazards and risks, recommendations to fix problems 
 
 ## 06. OWASP
 > Dalam menyusun tulisan ini, @kamarkamsib menggunakan OWASP sebagai kiblat.
@@ -61,7 +92,7 @@ Open Web Application Security Project® (OWASP) adalah yayasan nirlaba yang beke
 
 OWASP Foundation adalah sumber bagi pengembang dan ahli teknologi untuk mengamankan web. Salah satu project populer yang dihadirkan oleh yayasan ini adalah OWASP TOP 10. 
 
-### OWASP TOP 10
+### 06.1 OWASP TOP 10
 
 ![mapping](https://owasp.org/www-project-top-ten/assets/images/mapping.png)
 
