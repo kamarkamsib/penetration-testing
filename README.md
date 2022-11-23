@@ -28,8 +28,12 @@ Pentesting merupakan sebuah tes yang dilakukan dengan tujuan mencari kerenatanan
 
 ## 02. Emang siapa aja yang butuhin pentesting?
 
+Mari kita lihat dari sudut pandang tujuan pentesting. Tujuan pengujian penetrasi adalah untuk membantu bisnis menemukan di mana mereka paling mungkin menghadapi serangan dan secara proaktif menopang kelemahan tersebut sebelum dieksploitasi oleh peretas. Dari tujuan tersebut, pentesting ini bisa dibutuhkan oleh siapa saja yang memiliki Sistem Elektronik yang berjalan. Khususnya sistem yang dapat diakses oleh publik.
+
 ## 03. Lah kan udah ada bug bounty, terus pentesting buat apa?
 Ada perbedaan bug bounty dengan pentesting.
+
+https://www.hackerone.com/penetration-testing/bug-bounty-vs-penetration-testing-differences-explained
 
 ## 04. Metodologi
 Beberapa metodologi pentest yang bisa dipakai, antara lain:
