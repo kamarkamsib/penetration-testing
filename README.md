@@ -51,7 +51,7 @@ Standar pelaksanaan pentesting terdiri dari tujuh (7) bagian utama. Ketujuh bagi
 
 ## 05 Tahapan Umum
 
-### 05.1 Reconnaissance dan Information Gathering
+### 05.1 :mag: Reconnaissance dan Information Gathering
 Tujuan: Untuk menemukan informasi sebanyak mungkin mengenai target (baik itu individual ataupun organisasi). Pada tahap ini, SEBISA MUNGKIN dilakukan tanpa melalukan kontak langsung dengan jaringan target.
 
 Cara:
@@ -78,7 +78,7 @@ Cara: 
 - - 0day and exploit discovery (Fuzzing, program analysis)
 - - Post exploitation techniques to assess severity (permission levels, backdoors, rootkits, etc)
 
-### 05.4 Reporting
+### 05.4 :blue_book: Reporting
 Tujuan:  Untuk mendokumentasikan ketiga fase sebelumnya.  
 
 Cara:  
@@ -161,3 +161,20 @@ is added from the Top 10 community survey (#1). The data shows a relatively low 
 * xxx
 * yyy
 * zzz
+
+## 100. :desktop_computer: Persyaratan Pekerjaan (Umumnya)
+* Modern penetration testing tools and methods
+* Konsep Network security
+* Konsep Web-based application security
+* Windows/Linux/UNIX internals
+* Teknik dan taktik Social engineering techniques
+* Memiliki pengalaman di program bug bounty yang diselenggarakan oleh provider lokal atau internasional
+* Memiliki sertifikasi di bidang security assessment seperti CEH, OSCP, LTP, dsb.
+* Memiliki pengalaman dalam pengunaan multiple interpreted languages (Ruby, Python, PHP, etc.)
+* Memiliki pengalaman dalam penggunaan multiple compiled languages (Java, C, C++, Assembly, etc.)
+* Memiliki keahlian dalam penulisan laporan dan presetasi.
+* Memiliki pengetahuan terhadap peraturan yang diselenggarakan regulator dan IT Governance.
+* Mampu secara efektif memimpin tim pentester ketika proyek berjalan.
+* Mampu menjelaskan temuan pada pentest berikut rekomendasinya kepada user teknis maun non-teknis.
+
+### 100.1 Daftar persyaratan kerja diolah dari lowongan Junior/Senior Penetration Tester di: PT Juke Solusi Teknologi, PT X, PT Z, ...
