@@ -146,9 +146,16 @@ is added from the Top 10 community survey (#1). The data shows a relatively low 
 
 
 ## 07. Gimana cara jadi Pentester?
+- Tetap up to date pada perkembangan terbaru dalam keamanan komputer, membaca buletin dan laporan keamanan adalah cara yang baik untuk melakukannya.
+- Menguasai bahasa perograman XXXX-X
+- Microsoft, Cisco, and Novell certifications
+- Penetration Testing Certifications
+- Certified Ethical Hacker (CEH)
+- GIAC Certified Penetration Tester (GPEN)
 
-#### XSS
-https://github.com/payloadbox/xss-payload-list
-
-#### SQL Injection
-https://github.com/payloadbox/sql-injection-payload-list
+## 99. Payload List
+* XSS https://github.com/payloadbox/xss-payload-list
+* SQL Injection https://github.com/payloadbox/sql-injection-payload-list
+* xxx
+* yyy
+* zzz
