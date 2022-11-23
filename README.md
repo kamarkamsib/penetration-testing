@@ -177,6 +177,7 @@ S
 * Memiliki pengetahuan terhadap peraturan yang diselenggarakan regulator dan IT Governance.
 * Mampu secara efektif memimpin tim pentester ketika proyek berjalan.
 * Mampu menjelaskan temuan pada pentest berikut rekomendasinya kepada user teknis maun non-teknis.
+
 J
 * Pengalaman dalam penilaian kerentanan dan pengujian penetrasi minimal 1 tahun
 * Mampu bekerja dalam tim, cepat belajar, sikap yang baik
