@@ -20,6 +20,7 @@
 - - Reporting 
 - OWASP
 - Gimana cara jadi Pentester?
+- Payload list
 
 ## 01. Apa sih Penetration Testing itu?
 
@@ -67,7 +68,7 @@ Cara:
 - Route analysis (traceroute) 
 
 ### 05.3 Vulnerability Testing and Exploitation
-Tujuan:  To check hosts for known vulnerabilities and to see if they are exploitable, as well as to assess the potential severity of said vulnerabilities.  
+Tujuan:  Untuk mengecek apakah host tersebut memiliki kerentanan (_vulnerabilities_) dan melihat apakah kerentanan tersebut bisa dieksploitasi atau tidak. Serta untuk mengukur tingkat keparahan (_assess the potential severity_) dari vulnerabilities tersebut. 
 
 Cara:  
 - Remote vulnerability scanning (Nessus, OpenVAS)
@@ -78,11 +79,12 @@ Cara: 
 - - Post exploitation techniques to assess severity (permission levels, backdoors, rootkits, etc)
 
 ### 05.4 Reporting
-Tujuan:  To organize and document information found during the reconnaissance, network scanning, and vulnerability testing phases of a pentest.  
+Tujuan:  Untuk mendokumentasikan ketiga fase sebelumnya.  
 
 Cara:  
 - Documentation tools (Dradis)
 - Organizes information by hosts, services, identified hazards and risks, recommendations to fix problems 
+- Format dokumen (biasanya tiap instansi punya)
 
 ## 06. OWASP
 > Dalam menyusun tulisan ini, @kamarkamsib menggunakan OWASP sebagai kiblat.
