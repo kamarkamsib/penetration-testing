@@ -186,3 +186,39 @@ J
 * Familiar dengan program CTF dan bug bounty hunter minimal 1 tahun
 
 ### 100.1 Daftar persyaratan kerja diolah dari lowongan Junior/Senior Penetration Tester di: PT Juke Solusi Teknologi, PT X, PT Z, ...
+
+### Cyber Security Engineer
+ANOTECH Singapore
+SGD5.000 - 13.000/Bulan
+Software Engineering
+Full-Time
+5 - 10 tahun pengalaman
+**Responsibilities**
+· Determining and defining cybersecurity requirements from clients in relation to the sales and account management team
+· Recommending cybersecurity solutions/configurations, with regards to the clients’ requirements (proposals, bill of material, etc.)
+· Conduct and perform security monitoring, investigations, and analysis
+· Provide Security in Depth visibility into potential threats that may pose risk
+· Support detection, incident analysis, containment, remediation and reporting of events/incidents
+· Coordinating, anticipating, and balancing emerging and actual threats to ensure the integrity of assets
+· Analyse and respond to security threats from Firewall (FW), Intrusion Detection Systems (IDS), Intrusion Prevention Systems (IPS), Antivirus (AV), Endpoint Detection and Response (EDR) and other security threat data sources
+· Respond in a timely manner (SLA)
+· Conduct Operations surrounding cyber security incident response technologies including network logging and forensics, security information, security analytics platforms, etc.
+· Act as an internal information security consultant to the business and technology units, advising on risks, threats, and control practices
+· Utilise analytics to identify potential threats to the environment
+· Collaborate with technical leads and respective stakeholders
+· Adhere to policies, procedures, and security practices
+· Resolve problems independently and understand escalation procedures
+**Requirements**
+· At least 5 years of IT experience
+· Excellent communication skills and team player
+· Strong knowledge regarding the current and emerging threats (security)
+· Industry related certifications will be an advantage but not mandatory (CISSP, Security+, C|EH, GSEC, etc.)
+· Strong knowledge in:
+· TCP/IP networking
+· Linux, Windows, iOS, and Network Operating Systems
+· EDR and SIEM technologies
+· Working knowledge of Routing and Access Control Devices
+· Cisco networking solution (campus LAN & DC switches, routers, wireless)
+· Next generation firewall solution (Palo Alto, Checkpoint, Fortigate, etc.)
+· Cisco Security (Identity Service Engine, etc.)
+· Secure Access Service Edge (SASE) solution
