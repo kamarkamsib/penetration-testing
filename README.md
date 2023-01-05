@@ -223,5 +223,7 @@ Full-Time
 * Cisco Security (Identity Service Engine, etc.)
 * Secure Access Service Edge (SASE) solution
 
-# Latihan Menggunakan Santa THM
+# Latihan Menggunakan Santa THM 
+Task 8  [Day 3] OSINT Nothing escapes detective McRed
 Task 9  [Day 4] Scanning Scanning through the snow
+
