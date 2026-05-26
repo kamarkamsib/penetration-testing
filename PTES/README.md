@@ -1,27 +1,69 @@
-# PTES
+# 📋 PTES (Penetration Testing Execution Standard)
 
-## Standar Organisasi Level Tinggi (_High Level Organization of the Standard_)
+**Penetration Testing Execution Standard (PTES)** adalah standar baku pelaksanaan pentesting yang dirancang oleh para ahli industri keamanan siber untuk menetapkan basis acuan minimum dalam pelaksanaan penetration testing berkualitas tinggi. 
 
-Standar pelaksanaan pentesting terdiri dari tujuh (7) bagian utama. Ketujuh bagian ini mencakum semua hal terkait pentest ― mulai dari fase komunikasi awal dan alasan mengepa pentest dibutuhkan, hingga fase pengumpulan intelijen (_intelligence gathering_) dan pemodelan ancaman (_threat modeling_). 
+Tujuan dari standar ini adalah untuk memberikan pemahaman teknis dan bisnis yang selaras bagi penyedia jasa pentest (*tester*) maupun organisasi yang diuji (*klien*), sehingga hasil pengujian memiliki nilai nyata dalam meningkatkan postur keamanan.
 
-where testers are working behind the scenes in order to get a better understanding of the tested organization, through vulnerability research, exploitation and post exploitation, where the technical security expertise of the testers come to play and combine with the business understanding of the engagement, and finally to the reporting, which captures the entire process, in a manner that makes sense to the customer and provides the most value to it.
+---
 
-This version can be considered a v1.0 as the core elements of the standard are solidified, and have been "road tested" for over a year through the industry. A v2.0 is in the works soon, and will provide more granular work in terms of "levels" - as in intensity levels at which each of the elements of a penetration test can be performed at. As no pentest is like another, and testing will range from the more mundane web application or network test, to a full-on red team engagement, said levels will enable an organization to define how much sophistication they expect their adversary to exhibit, and enable the tester to step up the intensity on those areas where the organization needs them the most. Some of the initial work on "levels" can be seen in the intelligence gathering section.
+## 🗺️ 7 Bagian Utama Standar PTES
 
-Berikut adalah bagian utama yang didefisinikasan oleh standar sebagai dasar pelaksanaan pentesting:
+Berikut adalah penjelasan mengenai 7 tahapan utama yang didefinisikan oleh PTES sebagai siklus hidup pelaksanaan pentest profesional:
 
-* Pre-engagement Interactions
-* Intelligence Gathering
-* Threat Modeling
-* Vulnerability Analysis
-* Exploitation
-* Post Exploitation
-* Reporting
+### 1. Pre-engagement Interactions (Interaksi Pra-Pengujian)
+* **Tujuan**: Tahap negosiasi dan penyusunan kesepakatan hukum sebelum pengujian dimulai.
+* **Aktivitas**:
+  - Menentukan ruang lingkup pengujian (*Scope* - apa saja IP, domain, atau aplikasi yang boleh/tidak boleh diserang).
+  - Menetapkan aturan keterlibatan (*Rules of Engagement* - waktu pengujian, pelarangan serangan DoS, pengujian sosial engineering).
+  - Menyusun dan menandatangani dokumen hukum (seperti NDA - *Non-Disclosure Agreement*).
 
-Karena standar ini tidak memberikan pedoman teknis (_technical guidelines_) apa pun sejauh bagaimana menjalankan pentest yang sebenarnya, kami juga telah membuat panduan teknis untuk melengkapi standar itu sendiri. Panduan teknis dapat diperoleh melalui tautan di bawah ini:
+### 2. Intelligence Gathering (Pengumpulan Intelijen / Reconnaissance)
+* **Tujuan**: Mengumpulkan informasi sebanyak mungkin mengenai target untuk merancang skenario serangan.
+* **Aktivitas**:
+  - Melakukan OSINT (Open Source Intelligence) pada data publik organisasi.
+  - Melakukan pencarian footprint jaringan, email karyawan, subdomain, dan infrastruktur cloud.
+  - Menganalisis metadata dari file publik yang dibagikan target.
 
-* [Technical Guidelines](http://www.pentest-standard.org/index.php/PTES_Technical_Guidelines)
+### 3. Threat Modeling (Pemodelan Ancaman)
+* **Tujuan**: Mengidentifikasi dan memetakan potensi ancaman berdasarkan informasi intelijen yang terkumpul.
+* **Aktivitas**:
+  - Menganalisis aset organisasi apa saja yang paling bernilai (seperti database pelanggan, kode sumber).
+  - Mengidentifikasi profil penyerang yang mungkin menargetkan organisasi tersebut (misal: kompetitor, aktor negara, peretas oportunistik).
+  - Menentukan vektor serangan taktis yang paling efektif untuk menembus pertahanan target.
 
-For more information on what this standard is, please visit:
+### 4. Vulnerability Analysis (Analisis Kerentanan)
+* **Tujuan**: Menemukan kelemahan atau celah keamanan pada sistem dan aplikasi yang berada dalam ruang lingkup.
+* **Aktivitas**:
+  - Melakukan pemindaian otomatis (menggunakan *vulnerability scanners*).
+  - Melakukan pengujian manual untuk mengidentifikasi kesalahan konfigurasi logic aplikasi, kesalahan otorisasi, atau versi komponen usang.
+  - Mengonfirmasi temuan celah keamanan untuk memisahkan antara kerentanan nyata dan *false positive*.
 
-* [FAQ](http://www.pentest-standard.org/index.php/FAQ)
+### 5. Exploitation (Eksploitasi)
+* **Tujuan**: Menembus pertahanan sistem dengan cara mengeksploitasi kerentanan yang telah ditemukan sebelumnya secara terkontrol.
+* **Aktivitas**:
+  - Menjalankan payload exploit (seperti SQLi, RCE, Buffer Overflow) untuk mendapatkan akses awal (*initial access*).
+  - Menghindari deteksi sistem pertahanan (seperti WAF atau Antivirus) jika diperlukan sesuai kesepakatan rules.
+  - Membuktikan dampak nyata dari kerentanan tanpa merusak integritas operasional sistem klien.
+
+### 6. Post Exploitation (Pasca Eksploitasi)
+* **Tujuan**: Mengukur tingkat kerusakan atau dampak bisnis setelah sistem berhasil ditembus.
+* **Aktivitas**:
+  - Melakukan eskalasi hak akses (*privilege escalation*) dari user biasa menjadi administrator/root.
+  - Melakukan pemindahan lateral (*pivoting*) untuk menjelajahi jaringan internal target.
+  - Mengidentifikasi data sensitif yang dapat diakses (ekstrasi informasi bernilai tinggi).
+  - Memasang mekanisme persisten (*backdoor* legal) untuk membuktikan kemampuan penyerang mempertahankan akses.
+
+### 7. Reporting (Pelaporan)
+* **Tujuan**: Menyusun dokumen resmi hasil pengujian yang berisi temuan teknis beserta rekomendasi perbaikannya.
+* **Aktivitas**:
+  - Menulis laporan eksekutif ringkas untuk tingkat direksi/manajemen (berisi tingkat risiko bisnis dan konklusi umum).
+  - Menulis detail temuan teknis untuk tim IT/developer (langkah reproduksi celah, skor CVSS, bukti PoC, dan langkah mitigasi konkret).
+  - Melakukan sesi presentasi temuan (*debriefing*) dengan klien.
+
+---
+
+## 🛠️ Panduan Teknis & FAQ Resmi
+Karena dokumen standar ini fokus pada *alur proses kerja* dan bukan panduan perintah teknis, komite PTES juga menyediakan modul panduan teknis pelengkap yang dapat diakses secara online:
+
+* [PTES Technical Guidelines (Panduan Teknis Resmi)](http://www.pentest-standard.org/index.php/PTES_Technical_Guidelines)
+* [FAQ Resmi Standar PTES](http://www.pentest-standard.org/index.php/FAQ)

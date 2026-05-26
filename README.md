@@ -1,229 +1,265 @@
-# Penetration Testing
-###### Tulisan ini didedikasikan untuk para anggota grup [**Pentesting Indonesia**](https://t.me/PentestingIndonesia) di [Telegram](https://t.me/KamarKamsib). Github ini ada berisikan materi, konsep, best practice, contoh dokumen, hingga tools yang sering digunakan. Cekidot!
+# 🛡️ Penetration Testing — Kamar Kamsib
 
-## Kontributor:
-- [rad1zly](https://github.com/rad1zly)
-- [anton](https://github.com/antonlepari)
-- maybe it's you ...
-- maybe it's you ...
+<div align="center">
+  <img src="LogoKamarKamsib.png" alt="Kamar Kamsib Logo" width="200" style="border-radius: 50%; margin-bottom: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
+  <p><strong>Tulisan ini didedikasikan untuk para anggota grup Pentesting Indonesia di Kamar Kamsib.</strong></p>
+  
+  [![Telegram Group](https://img.shields.io/badge/Telegram-Group-blue?style=for-the-badge&logo=telegram)](https://t.me/PentestingIndonesia)
+  [![Telegram Channel](https://img.shields.io/badge/Telegram-Channel-orange?style=for-the-badge&logo=telegram)](https://t.me/KamarKamsib)
+  [![Security Standards](https://img.shields.io/badge/Standards-OWASP%20%7C%20PTES-green?style=for-the-badge)](https://owasp.org)
+</div>
 
-## Outline
+---
 
-- Apa sih [Penetration Testing](https://github.com/kamarkamsib/penetration-testing/) itu?
-- Emang siapa aja yang butuhin pentesting?
-- Lah kan udah ada bug bounty, terus pentesting buat apa?
-- Metodologi yang digunakan.
-- Tahapan Umum
-- - Reconnaissance and Information Gathering
-- - Network Enumeration and Scanning
-- - Vulnerability Testing and Exploitation
-- - Reporting 
-- OWASP
-- Gimana cara jadi Pentester?
-- Payload list
+Selamat datang di repositori pembelajaran **Penetration Testing (Pentest) Kamar Kamsib**! Repositori ini dirancang khusus untuk membagikan materi, konsep dasar, *best practice*, standar industri, contoh dokumen, hingga kumpulan *payload* yang siap digunakan oleh para pemula maupun praktisi keamanan informasi di Indonesia.
+
+---
+
+## 🎯 Kontributor
+Kontributor utama repositori ini:
+* 👤 **[rad1zly](https://github.com/rad1zly)**
+* 👤 **[anton](https://github.com/antonlepari)**
+* 🤝 **Ingin Berkontribusi?** Kami sangat terbuka! Silakan kirimkan Pull Request (PR) Anda untuk melengkapi repositori ini.
+
+---
+
+## 🗺️ Panduan Outline Materi
+
+1. [01. Apa sih Penetration Testing itu?](#01-apa-sih-penetration-testing-itu)
+2. [02. Siapa yang Membutuhkan Pentesting?](#02-siapa-yang-membutuhkan-pentesting)
+3. [03. Pentesting vs Bug Bounty: Apa Bedanya?](#03-pentesting-vs-bug-bounty-apa-bedanya)
+4. [04. Metodologi Standar Industri](#04-metodologi-standar-industri)
+5. [05. Tahapan Umum Penetration Testing](#05-tahapan-umum-penetration-testing)
+6. [06. OWASP Top 10 2021 & Skenario Serangan](#06-owasp-top-10-2021--skenario-serangan)
+7. [07. Peta Jalan Menjadi Pentester Profesional](#07-peta-jalan-menjadi-pentester-profesional)
+8. [99. Referensi Kumpulan Payload Terpopuler](#99-referensi-kumpulan-payload-terpopuler)
+9. [100. Analisis Persyaratan Pekerjaan Pentester](#100-analisis-persyaratan-pekerjaan-pentester)
+10. [🎄 Latihan Tambahan (Advent of Cyber Writeups)](#latihan-menggunakan-santa-thm)
+
+---
 
 ## 01. Apa sih Penetration Testing itu?
 
-Pentesting merupakan sebuah tes yang dilakukan dengan tujuan mencari kerenatanan pada sebua sistem. Sedikit berbeda dengan Vuln Scaning, Pentest menguji keamanan komputer individu, perangkat jaringan, atau aplikasi, pengujian penetrasi menilai model keamanan jaringan secara keseluruhan. Pentesting berbeda pula dengan kegiatan Bug Hunting atau Bug Bounty.
+**Penetration Testing** (atau sering disingkat **Pentest**) adalah metode pengujian keamanan sistem komputer, jaringan, atau aplikasi web dengan cara mensimulasikan serangan nyata dari pihak luar (*hacker*) secara legal dan terstruktur.
 
-> Tetap haus dan jangan lupa berbagi.
+> **⚠️ Pentest vs Vulnerability Scanning:**
+> * **Vulnerability Scanning**: Proses otomatis menggunakan perangkat lunak (seperti Nessus atau OpenVAS) untuk mencari daftar celah keamanan yang diketahui tanpa melakukan eksploitasi lebih lanjut.
+> * **Penetration Testing**: Menggabungkan pemindaian otomatis dan analisis manual mendalam untuk mengeksploitasi celah keamanan guna menguji ketahanan model keamanan secara keseluruhan serta mengukur dampak riil serangan terhadap bisnis.
 
-## 02. Emang siapa aja yang butuhin pentesting?
+---
 
-Mari kita lihat dari sudut pandang tujuan pentesting. Tujuan pengujian penetrasi adalah untuk membantu bisnis menemukan di mana mereka paling mungkin menghadapi serangan dan secara proaktif menopang kelemahan tersebut sebelum dieksploitasi oleh peretas. Dari tujuan tersebut, pentesting ini bisa dibutuhkan oleh siapa saja yang memiliki Sistem Elektronik yang berjalan. Khususnya sistem yang dapat diakses oleh publik.
+## 02. Siapa yang Membutuhkan Pentesting?
 
-## 03. Lah kan udah ada bug bounty, terus pentesting buat apa?
-Ada perbedaan bug bounty dengan pentesting.
+Pada dasarnya, **semua organisasi yang memiliki infrastruktur digital dan memproses data sensitif** membutuhkan pentesting. Beberapa di antaranya meliputi:
 
-https://www.hackerone.com/penetration-testing/bug-bounty-vs-penetration-testing-differences-explained
+1. **Perusahaan Finansial & FinTech**: Bank, e-wallet, dan gerbang pembayaran (*payment gateway*) wajib melakukan pentesting untuk mematuhi regulasi ketat (seperti PCI-DSS dan aturan BI/OJK).
+2. **Platform E-Commerce**: Untuk mengamankan data transaksi pelanggan, kartu kredit, dan mencegah manipulasi harga barang.
+3. **Instansi Pemerintah & BUMN**: Mengamankan sistem layanan publik kritikal dari sabotase atau kebocoran data nasional.
+4. **Penyedia Layanan SaaS/Cloud**: Memastikan data dari ribuan klien yang disimpan dalam platform mereka aman dari akses tidak sah.
+5. **Startup Teknologi**: Membangun kepercayaan pelanggan sejak awal dengan memastikan produk digital mereka sudah teruji keamanannya sebelum diluncurkan.
 
-## 04. Metodologi
-Beberapa metodologi pentest yang bisa dipakai, antara lain:
+---
 
-* PTES
+## 03. Pentesting vs Bug Bounty: Apa Bedanya?
 
-Standar pelaksanaan pentesting terdiri dari tujuh (7) bagian utama. Ketujuh bagian ini mencakup semua hal terkait pentest ― mulai dari fase komunikasi awal dan alasan mengepa pentest dibutuhkan, hingga fase pengumpulan intelijen (_intelligence gathering_) dan pemodelan ancaman (_threat modeling_).
+Meskipun keduanya bertujuan untuk menemukan celah keamanan, terdapat perbedaan mendasar yang krusial dari segi cakupan, metode, dan tujuan operasional:
 
-* NIST CSF
-* OWASP Testing Framework
-* Lorem ipsum...
-* dst....
+| Parameter | 🛡️ Penetration Testing | 🎯 Bug Bounty |
+| :--- | :--- | :--- |
+| **Model Pembayaran** | Berdasarkan waktu/proyek yang disepakati (*fixed rate*). | Berdasarkan kualitas celah keamanan yang ditemukan (*pay-per-vulnerability*). |
+| **Cakupan Pengujian** | Menyeluruh (mencakup dokumentasi sistem, arsitektur, dan seluruh aspek keamanan baik yang terlihat maupun tidak). | Fokus pada celah kritis tertentu yang terdaftar di dalam program (*restricted scope*). |
+| **Akses & Skenario** | Sering kali mencakup skenario *White Box* atau *Gray Box* (menyediakan akun uji, kode sumber, atau diagram jaringan). | Mayoritas menggunakan skenario *Black Box* (tanpa informasi awal sama sekali). |
+| **Evaluasi Risiko** | Memberikan laporan komprehensif tentang postur pertahanan, termasuk celah keamanan rendah (*low/medium*) dan analisis kepatuhan. | Biasanya hanya memprioritaskan temuan berdampak tinggi (*critical/high*) demi mengejar bayaran terbesar. |
+| **Keandalan Waktu** | Dapat dijadwalkan secara berkala (misal: sebelum rilis produk baru atau setahun sekali). | Berjalan terus-menerus tanpa batas waktu yang pasti dan tidak menjamin kelengkapan evaluasi pada tanggal tertentu. |
 
-## 05 Tahapan Umum
+---
 
-### 05.1 :mag: Reconnaissance dan Information Gathering
-Tujuan: Untuk menemukan informasi sebanyak mungkin mengenai target (baik itu individual ataupun organisasi). Pada tahap ini, SEBISA MUNGKIN dilakukan tanpa melalukan kontak langsung dengan jaringan target.
+## 04. Metodologi Standar Industri
 
-Cara:
-- Menggunakan WHOIS
-- Google searching
-- Website browsing
+Dalam pelaksanaan pentesting profesional, agar proses pengujian dapat dipertanggungjawabkan dan konsisten, pentester mengacu pada kerangka kerja (metodologi) standar industri berikut:
 
-### 05.2 Network Enumeration and Scanning
-Tujuan:  Untuk menemukan layanan atau sistem apa saja yang dimiliki target. Khususnya sistem yang sedang berjalan (live hosts dan services).
+* **[PTES (Penetration Testing Execution Standard)](PTES/README.md)**  
+  Standar komprehensif yang membagi proses pentest ke dalam 7 tahap utama, mulai dari komunikasi pra-kesepakatan hingga eksploitasi dan pelaporan terperinci.
+* **NIST CSF (Cybersecurity Framework) & SP 800-115**  
+  Pedoman teknis dari pemerintah Amerika Serikat untuk melakukan pengujian keamanan informasi dan penilaian teknis secara berkala di level organisasi/enterprise.
+* **OWASP WSTG (Web Security Testing Guide)**  
+  Panduan terlengkap di dunia untuk pengujian keamanan aplikasi web secara spesifik, yang mencakup ratusan skenario pengujian di seluruh alur logika web.
+* **OSSTMM (Open Source Security Testing Methodology Manual)**  
+  Metodologi ilmiah berbasis metrik operasional untuk menguji keamanan operasional di tingkat jaringan, nirkabel (*wireless*), telekomunikasi, dan keamanan fisik.
 
-Cara: 
-- Melalukan scanning ke target menggunakan Nmap
-- DNS Querying
-- Route analysis (traceroute) 
+---
 
-### 05.3 Vulnerability Testing and Exploitation
-Tujuan:  Untuk mengecek apakah host tersebut memiliki kerentanan (_vulnerabilities_) dan melihat apakah kerentanan tersebut bisa dieksploitasi atau tidak. Serta untuk mengukur tingkat keparahan (_assess the potential severity_) dari vulnerabilities tersebut. 
+## 05. Tahapan Umum Penetration Testing
 
-Cara:  
-- Remote vulnerability scanning (Nessus, OpenVAS)
-- Active exploitation testing
-- - Login checking and bruteforcing
-- - Vulnerability exploitation (Metasploit, Core Impact)
-- - 0day and exploit discovery (Fuzzing, program analysis)
-- - Post exploitation techniques to assess severity (permission levels, backdoors, rootkits, etc)
+Proses pentesting dibagi menjadi beberapa tahapan logis berikut:
 
-### 05.4 :blue_book: Reporting
-Tujuan:  Untuk mendokumentasikan ketiga fase sebelumnya.  
+```mermaid
+graph LR
+    A[Reconnaissance & OSINT] --> B[Scanning & Enumeration]
+    B --> C[Vulnerability Assessment]
+    C --> D[Exploitation]
+    D --> E[Post-Exploitation]
+    E --> F[Reporting & Remediation]
+```
 
-Cara:  
-- Documentation tools (Dradis)
-- Organizes information by hosts, services, identified hazards and risks, recommendations to fix problems 
-- Format dokumen (biasanya tiap instansi punya)
+### 🔍 05.1 Reconnaissance dan Information Gathering
+* **Tujuan**: Mengumpulkan informasi sebanyak mungkin mengenai target tanpa berinteraksi secara agresif/langsung dengan infrastruktur utama.
+* **Cara/Teknik**:
+  - Menggunakan WHOIS lookup dan DNS enumeration (`dig`, `nslookup`).
+  - Memanfaatkan Google Dorking dan pencarian OSINT pada repositori publik (seperti mencari token bocor di GitHub).
+  - Menggunakan platform seperti Shodan atau Censys untuk mengidentifikasi port terbuka yang terindeks publik.
 
-## 06. OWASP
-> Dalam menyusun tulisan ini, @kamarkamsib menggunakan OWASP sebagai kiblat.
-> situs : [OWASP](https://owasp.org/www-project-top-ten/)
+### 🌐 05.2 Network Enumeration and Scanning
+* **Tujuan**: Mengidentifikasi sistem yang aktif (*live hosts*), layanan yang berjalan (*services*), sistem operasi, serta versi port yang terbuka pada target.
+* **Cara/Teknik**:
+  - Menggunakan `Nmap` untuk pemindaian port dan identifikasi servis secara mendalam.
+  - Melakukan sub-domain enumeration dengan `Subfinder`, `Amass`, atau `Assetfinder`.
+  - Melakukan direktori fuzzing menggunakan `FFuF`, `Gobuster`, atau `Dirsearch`.
 
-Open Web Application Security Project® (OWASP) adalah yayasan nirlaba yang bekerja untuk meningkatkan keamanan perangkat lunak. Melalui proyek perangkat lunak sumber terbuka yang dipimpin komunitas, ratusan cabang lokal di seluruh dunia, puluhan ribu anggota, dan konferensi pendidikan dan pelatihan terkemuka. 
+### ⚡ 05.3 Vulnerability Testing and Exploitation
+* **Tujuan**: Menganalisis apakah terdapat kerentanan pada layanan yang teridentifikasi, membuktikan kerentanan tersebut dengan melakukan eksploitasi terkontrol, dan mengukur tingkat risiko riil.
+* **Cara/Teknik**:
+  - Pemindaian kerentanan otomatis menggunakan `Nessus` atau `OpenVAS`.
+  - Pengujian exploit publik melalui database seperti Exploit-DB, searchsploit, atau modul `Metasploit`.
+  - Melakukan eksploitasi manual pada kerentanan aplikasi web (seperti SQLi, XSS, SSRF).
+  - Melakukan *Post-Exploitation* (seperti eskalasi hak akses / *privilege escalation*, dan pivoting ke jaringan internal).
 
-OWASP Foundation adalah sumber bagi pengembang dan ahli teknologi untuk mengamankan web. Salah satu project populer yang dihadirkan oleh yayasan ini adalah OWASP TOP 10. 
+### 📝 05.4 Reporting
+* **Tujuan**: Mendokumentasikan seluruh temuan celah keamanan beserta bukti konsep (PoC), dampak bisnis, serta rekomendasi perbaikan yang jelas bagi tim developer.
+* **Cara/Teknik**:
+  - Menulis laporan eksekutif (untuk jajaran manajemen non-teknis) dan laporan teknis (untuk tim IT/developer).
+  - Menggunakan kalkulator CVSS untuk menentukan tingkat keparahan (*severity*).
+  - Merekomendasikan langkah mitigasi nyata untuk setiap celah keamanan.
 
-### 06.1 OWASP TOP 10
+---
 
-![mapping](https://owasp.org/www-project-top-ten/assets/images/mapping.png)
+## 06. OWASP Top 10 2021 & Skenario Serangan
 
-OWASP Top 10 adalah dokumen kesadaran standar untuk pengembang dan keamanan aplikasi web. Ini mewakili konsensus luas tentang risiko keamanan paling kritis untuk aplikasi web. OWASP Top 10 adalah buku/dokumen referensi yang menguraikan 10 masalah keamanan paling kritis (critical security concerns) untuk keamanan aplikasi web. Laporan tersebut disusun oleh tim pakar keamanan dari seluruh dunia dan datanya berasal dari sejumlah organisasi dan kemudian dianalisis.
+OWASP Top 10 merupakan standar konsensus global mengenai risiko keamanan paling kritis pada aplikasi web saat ini. Berikut adalah rincian 10 kerentanan tersebut beserta penjelasan operasionalnya:
 
-### Belajar Serangan
-Salah satu kiblat dari Kamar Kamsib dalam memahami serangan yang populer adalah OWASP Top 10. Mulai dari OWASP Top Ten tahun 2013, 2017, dan tahun 2021. Bagian ini akan membahas mengenai OWASP TOP 10 2021.
+### 🔏 A01 Broken Access Control
+Terjadi ketika aplikasi gagal membatasi hak akses pengguna secara benar, sehingga pengguna biasa dapat mengakses fitur atau data pengguna lain/administrator.
+* **Contoh Skenario**: Mengubah ID parameter pada URL, misalnya mengakses `https://target.com/profile?id=1001` menjadi `https://target.com/profile?id=1002` untuk melihat data sensitif akun lain secara langsung (**IDOR**).
 
-#### A01 Broken Access Control 
-Kontrol Akses (_access control_) memberlakukan kebijakan sedemikian rupa sehingga pengguna tidak dapat bertindak di luar izin yang dimaksudkan. Kegagalan (_failure_) biasanya mengarah pada pengungkapan informasi yang tidak sah, modifikasi, atau penghancuran semua data atau menjalankan fungsi bisnis di luar batas pengguna. Kerentanan kontrol akses umum meliputi:
+### 🔑 A02 Cryptographic Failures
+Kerentanan yang berkaitan dengan perlindungan data sensitif baik saat dikirimkan di jaringan (*in-transit*) maupun saat disimpan dalam database (*at-rest*).
+* **Contoh Skenario**: Menggunakan protokol HTTP tanpa enkripsi (bukan HTTPS), menggunakan algoritma hashing usang (seperti MD5 atau SHA1) untuk menyimpan password, atau kunci enkripsi didefinisikan secara statis di dalam kode (*hardcoded*).
 
-* Hak akses yang seharusnya hanya untuk top level akun, malah tersedia untuk siapa saja.
-* Melewati pemeriksaan kontrol akses dengan memodifikasi URL (pengrusakan parameter atau penelusuran paksa), status aplikasi internal, atau halaman HTML, atau dengan menggunakan alat penyerang yang mengubah permintaan API.
-* Mengizinkan melihat atau mengedit akun orang lain, dengan memberikan pengenal uniknya (referensi objek langsung yang tidak aman).
-* Mengakses API tanpa kontrol akses untuk POST, PUT, dan DELETE.
-* Peningkatan keistimewaan. Bertindak sebagai pengguna tanpa masuk atau bertindak sebagai admin saat masuk sebagai pengguna.
-* Manipulasi metadata, seperti memutar ulang atau merusak token kontrol akses JSON Web Token (JWT), atau cookie atau bidang tersembunyi yang dimanipulasi untuk meningkatkan hak istimewa atau menyalahgunakan pembatalan JWT.
-* Kesalahan konfigurasi CORS memungkinkan akses API dari sumber yang tidak sah/tidak tepercaya.
-* _Force browsing_ ke halaman yang diautentikasi sebagai pengguna yang tidak diautentikasi atau ke halaman dengan hak istimewa sebagai pengguna standar.
+### 💉 A03 Injection
+Kerentanan klasik di mana input dari pengguna diteruskan langsung ke interpreter query tanpa adanya validasi atau sanitasi yang ketat.
+* **Contoh Skenario**: SQL Injection (SQLi) di mana input `' OR 1=1 --` disisipkan ke form login sehingga penyerang berhasil masuk tanpa menggunakan username/password yang valid.
 
-#### A02 Cryptographic Failures 
-Menentukan terlebih dulu kebutuhan **Data Protection** antara **Data In transit** dan **Data At Rest**. Misalnya, kata sandi, nomor kartu kredit, catatan kesehatan, informasi pribadi, dan rahasia bisnis memerlukan perlindungan ekstra, terutama jika data tersebut termasuk dalam undang-undang privasi, misalnya Peraturan Perlindungan Data Umum (GDPR) UE, atau peraturan, misalnya, perlindungan data keuangan seperti Standar Keamanan Data PCI (PCI DSS).
+### 🏛️ A04 Insecure Design
+Kategori baru yang berfokus pada kelemahan keamanan yang terjadi pada level arsitektur dan desain aplikasi sejak awal sebelum kode diimplementasikan.
+* **Contoh Skenario**: Sistem lupa menyertakan pembatasan upaya login (*rate limiting*) pada sistem transfer dana, sehingga penyerang dapat melakukan bruteforce transaksi secara berulang tanpa dibatasi.
 
-#### A03 Injection 
-Injek.
+### ⚙️ A05 Security Misconfiguration
+Konfigurasi server atau komponen aplikasi yang kurang aman karena dibiarkan menggunakan setelan default, tidak diperbarui, atau menampilkan pesan error sistem yang terlalu detail.
+* **Contoh Skenario**: Membiarkan kredensial admin default aktif pada dashboard (seperti `admin:admin`), atau mengaktifkan mode debug (*debug mode*) di lingkungan produksi sehingga stack trace database terekspos ke publik saat terjadi error.
 
-#### A04 Insecure Design 
-Desain yang tidak aman adalah kategori luas yang mewakili berbagai kelemahan, dinyatakan sebagai "desain kontrol yang hilang atau tidak efektif". Rancangan yang tidak aman bukanlah sumber dari semua kategori 10 risiko teratas lainnya. Ada perbedaan antara desain yang tidak aman dan implementasi yang tidak aman. 
+### 📦 A06 Vulnerable and Outdated Components
+Terjadi ketika pengembang menggunakan library, modul, framework, atau sistem operasi pihak ketiga yang telah diketahui memiliki celah keamanan (CVE) dan tidak diperbarui (*patched*).
+* **Contoh Skenario**: Menggunakan versi jQuery, WordPress, atau library OpenSSL lama yang rentan terhadap serangan Remote Code Execution (RCE).
 
-Kami membedakan antara cacat desain dan cacat implementasi karena suatu alasan, mereka memiliki akar penyebab dan perbaikan yang berbeda. Desain yang aman masih dapat memiliki cacat implementasi yang menyebabkan kerentanan yang dapat dieksploitasi. Desain yang tidak aman tidak dapat diperbaiki dengan implementasi yang sempurna karena menurut definisi, kontrol keamanan yang diperlukan tidak pernah dibuat untuk bertahan dari serangan tertentu. 
+### 👤 A07 Identification and Authentication Failures
+Kegagalan dalam memverifikasi identitas pengguna dengan benar, sehingga penyerang dapat memanipulasi sesi aktif atau menebak kredensial dengan mudah.
+* **Contoh Skenario**: Memperbolehkan password yang sangat lemah, tidak menerapkan Multi-Factor Authentication (MFA), atau tidak merusak token sesi (*session token*) di sisi server saat pengguna melakukan logout.
 
-Salah satu faktor yang berkontribusi terhadap desain yang tidak aman adalah kurangnya profil risiko bisnis yang melekat pada perangkat lunak atau sistem yang sedang dikembangkan, dan dengan demikian kegagalan untuk menentukan tingkat desain keamanan apa yang diperlukan.
+### 🔗 A08 Software and Data Integrity Failures
+Kegagalan dalam memverifikasi integritas kode aplikasi atau data yang dikirimkan. Hal ini termasuk penggunaan repositori kode eksternal tanpa verifikasi keamanan, atau manipulasi data terserialisasi.
+* **Contoh Skenario**: Insecure Deserialization, di mana aplikasi menerima objek serialisasi dari pengguna secara mentah-mentah sehingga objek tersebut dieksekusi sebagai perintah sistem jarak jauh (RCE).
 
-#### A05 Security Misconfiguration 
-Jangan salah konfigurasi.
+### 📊 A09 Security Logging and Monitoring Failures
+Kegagalan sistem dalam mencatat aktivitas penting (log) dan memantau kejadian mencurigakan secara real-time, sehingga penyerang dapat beroperasi di dalam jaringan tanpa terdeteksi dalam waktu yang lama.
+* **Contoh Skenario**: Tidak mencatat aktivitas login gagal yang masif (*bruteforce*) atau tidak mengirimkan notifikasi peringatan (*alerting*) saat terjadi aktivitas mencurigakan pada database admin.
 
-#### A06 Vulnerable and Outdated Components 
-was previously titled Using Components with Known Vulnerabilities and is #2 in the Top 10 community survey, but also had enough data to make the Top 10 via data analysis. This category moves up from #9 in 2017 and is a known issue that we struggle to test and assess risk. It is the only category not to have any Common Vulnerability and Exposures (CVEs) mapped to the included CWEs, so a default exploit and impact weights of 5.0 are factored into their scores.
+### 🛰️ A10 Server-Side Request Forgery (SSRF)
+Kerentanan di mana server backend dipaksa oleh penyerang untuk mengirimkan HTTP request ke alamat eksternal maupun internal yang seharusnya tidak dapat diakses secara langsung oleh publik.
+* **Contoh Skenario**: Memasukkan alamat IP internal (`http://192.168.1.1/admin`) pada parameter input URL impor gambar, sehingga server mengeksekusi request tersebut dan menampilkan halaman admin internal ke penyerang.
 
-#### A07 Identification and Authentication Failures 
-was previously Broken Authentication and is sliding down from the second position, and now includes CWEs that are more related to identification failures. This category is still an integral part of the Top 10, but the increased availability of standardized frameworks seems to be helping.
+---
 
-#### A08 Software and Data Integrity Failures 
-is a new category for 2021, focusing on making assumptions related to software updates, critical data, and CI/CD pipelines without verifying integrity. One of the highest weighted impacts from Common Vulnerability and Exposures/Common Vulnerability Scoring System (CVE/CVSS) data mapped to the 10 CWEs in this category. A8:2017-Insecure Deserialization is now a part of this larger category.
+## 07. Peta Jalan Menjadi Pentester Profesional
 
-#### A09 Security Logging and Monitoring Failures 
-was previously A10:2017-Insufficient Logging & Monitoring and is added from the Top 10 community survey (#3), moving up from #10 previously. This category is expanded to include more types of failures, is challenging to test for, and isn't well represented in the CVE/CVSS data. However, failures in this category can directly impact visibility, incident alerting, and forensics.
+Untuk berkarier sebagai Penetration Tester profesional, berikut adalah jalur belajar terstruktur yang sangat disarankan:
 
-#### A10 Server-Side Request Forgery 
-is added from the Top 10 community survey (#1). The data shows a relatively low incidence rate with above average testing coverage, along with above-average ratings for Exploit and Impact potential. This category represents the scenario where the security community members are telling us this is important, even though it's not illustrated in the data at this time.
+```
+[Level Dasar] ──────> [Level Menengah] ──────> [Sertifikasi & Karir]
+- Linux/Windows       - Web & API Testing     - eJPT / PNPT (Pemula)
+- Dasar Jaringan      - Network Pentest       - OSCP / GPEN (Menengah)
+- Python/Bash         - Privilege Escalation  - OSWE / GXPN (Lanjut)
+```
 
+### 1. Fondasi Dasar (Prerequisites)
+* **Dasar Jaringan (Networking)**: Memahami protokol TCP/IP, model OSI, cara kerja DNS, HTTP/HTTPS, subnetting, dan routing.
+* **Sistem Operasi (OS)**: Menguasai navigasi baris perintah (*command line*) pada Linux (Ubuntu, Debian) dan Windows Powershell/CMD.
+* **Bahasa Pemrograman Dasar**: Minimal memahami alur logika pemrograman menggunakan **Python**, **Javascript**, atau **Bash Scripting** untuk otomatisasi tugas.
 
-## 07. Gimana cara jadi Pentester?
-- Tetap up to date pada perkembangan terbaru dalam keamanan komputer, membaca buletin dan laporan keamanan adalah cara yang baik untuk melakukannya.
-- Menguasai bahasa perograman XXXX-X
-- Microsoft, Cisco, and Novell certifications
-- Penetration Testing Certifications
-- Certified Ethical Hacker (CEH)
-- GIAC Certified Penetration Tester (GPEN)
+### 2. Platform Belajar Praktis (Lab Interaktif)
+* **[TryHackMe (THM)](https://tryhackme.com/)**: Sangat direkomendasikan untuk pemula karena menyediakan materi terstruktur beserta lab simulasi praktis langkah-demi-langkah.
+* **[PortSwigger Web Security Academy](https://portswigger.net/web-security)**: Lab gratis terbaik di dunia untuk mempelajari kerentanan aplikasi web secara mendalam.
+* **[Hack The Box (HTB)](https://www.hackthebox.com/)**: Lab tantangan (*CTF-style*) dengan tingkat kesulitan menengah hingga ahli.
 
-## 99. Payload List
-* XSS https://github.com/payloadbox/xss-payload-list
-* SQL Injection https://github.com/payloadbox/sql-injection-payload-list
-* xxx
-* yyy
-* zzz
+### 3. Sertifikasi Profesional Pentesting
+* **Sertifikasi Pemula (Entry-Level)**:
+  - **eJPT** (eLearnSecurity Junior Penetration Tester)
+  - **PNPT** (Practical Network Penetration Tester dari TCM Security)
+  - **Security+** (CompTIA - Teoretis)
+* **Sertifikasi Menengah (Intermediate)**:
+  - **OSCP** (Offensive Security Certified Professional - Standar Emas Industri)
+  - **GPEN** (GIAC Penetration Tester)
+* **Sertifikasi Lanjutan (Advanced)**:
+  - **OSWE** (Offensive Security Web Expert - Fokus analisis kode sumber & Web app lanjutan)
+  - **OSEP** (Offensive Security Experienced Penetration Tester - Fokus bypass antivirus & Active Directory evasion)
 
-## 100. :desktop_computer: Persyaratan Pekerjaan (Umumnya)
-S
-* Modern penetration testing tools and methods
-* Konsep Network security
-* Konsep Web-based application security
-* Windows/Linux/UNIX internals
-* Teknik dan taktik Social engineering techniques
-* Memiliki pengalaman di program bug bounty yang diselenggarakan oleh provider lokal atau internasional
-* Memiliki sertifikasi di bidang security assessment seperti CEH, OSCP, LTP, dsb.
-* Memiliki pengalaman dalam pengunaan multiple interpreted languages (Ruby, Python, PHP, etc.)
-* Memiliki pengalaman dalam penggunaan multiple compiled languages (Java, C, C++, Assembly, etc.)
-* Memiliki keahlian dalam penulisan laporan dan presetasi.
-* Memiliki pengetahuan terhadap peraturan yang diselenggarakan regulator dan IT Governance.
-* Mampu secara efektif memimpin tim pentester ketika proyek berjalan.
-* Mampu menjelaskan temuan pada pentest berikut rekomendasinya kepada user teknis maun non-teknis.
+---
 
-J
-* Pengalaman dalam penilaian kerentanan dan pengujian penetrasi minimal 1 tahun
-* Mampu bekerja dalam tim, cepat belajar, sikap yang baik
-* Keterampilan komunikasi yang baik, mampu menulis atau berbicara dalam bahasa Inggris
-* Akrab dengan pengujian penetrasi dan laporan
-* Familiar dengan program CTF dan bug bounty hunter minimal 1 tahun
+## 99. Referensi Kumpulan Payload Terpopuler
 
-### 100.1 Daftar persyaratan kerja diolah dari lowongan Junior/Senior Penetration Tester di: PT Juke Solusi Teknologi, PT X, PT Z, ...
+Saat melakukan pengujian keamanan, berikut adalah kumpulan repositori dan alat bantu payload yang sangat berguna untuk dirujuk:
 
-### Cyber Security Engineer
-ANOTECH Singapore
-SGD5.000 - 13.000/Bulan
-Software Engineering
-Full-Time
-5 - 10 tahun pengalaman
-**Responsibilities**
-* Determining and defining cybersecurity requirements from clients in relation to the sales and account management team
-* Recommending cybersecurity solutions/configurations, with regards to the clients’ requirements (proposals, bill of material, etc.)
-* Conduct and perform security monitoring, investigations, and analysis
-* Provide Security in Depth visibility into potential threats that may pose risk
-* Support detection, incident analysis, containment, remediation and reporting of events/incidents
-* Coordinating, anticipating, and balancing emerging and actual threats to ensure the integrity of assets
-* Analyse and respond to security threats from Firewall (FW), Intrusion Detection Systems (IDS), Intrusion Prevention Systems (IPS), Antivirus (AV), Endpoint Detection and Response (EDR) and other security threat data sources
-* Respond in a timely manner (SLA)
-* Conduct Operations surrounding cyber security incident response technologies including network logging and forensics, security information, security analytics platforms, etc.
-* Act as an internal information security consultant to the business and technology units, advising on risks, threats, and control practices
-* Utilise analytics to identify potential threats to the environment
-* Collaborate with technical leads and respective stakeholders
-* Adhere to policies, procedures, and security practices
-* Resolve problems independently and understand escalation procedures
-**Requirements**
-* At least 5 years of IT experience
-* Excellent communication skills and team player
-* Strong knowledge regarding the current and emerging threats (security)
-* Industry related certifications will be an advantage but not mandatory (CISSP, Security+, C|EH, GSEC, etc.)
-* Strong knowledge in:
-* TCP/IP networking
-* Linux, Windows, iOS, and Network Operating Systems
-* EDR and SIEM technologies
-* Working knowledge of Routing and Access Control Devices
-* Cisco networking solution (campus LAN & DC switches, routers, wireless)
-* Next generation firewall solution (Palo Alto, Checkpoint, Fortigate, etc.)
-* Cisco Security (Identity Service Engine, etc.)
-* Secure Access Service Edge (SASE) solution
+* **[PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings)**  
+  Koleksi payload dan metodologi bypass terbaik untuk berbagai kerentanan web app.
+* **[SecLists](https://github.com/danielmiessler/SecLists)**  
+  *Wordlist* wajib untuk semua pentester (berisi daftar username default, password paling umum, nama direktori web sensitif, payload injeksi, dll.).
+* **[Payloadbox](https://github.com/payloadbox)**  
+  Repositori khusus untuk list payload XSS, SQL Injection, dan pengujian API.
+* **[GTFOBins](https://gtfobins.github.io/)** (untuk Linux) & **[LOLBAS](https://lolbas-project.github.io/)** (untuk Windows)  
+  Daftar binari bawaan sistem operasi yang dapat disalahgunakan untuk meloloskan diri dari pembatasan shell (*privilege escalation*).
 
-# Latihan Menggunakan Santa THM 
-Task 8  [Day 3] OSINT Nothing escapes detective McRed
-Task 9  [Day 4] Scanning Scanning through the snow
+---
 
+## 100. Analisis Persyaratan Pekerjaan Pentester
+
+Untuk memberikan gambaran dunia kerja nyata, berikut adalah resume persyaratan kerja yang umum diminta oleh industri di Indonesia saat ini:
+
+### 👨‍💻 Junior Penetration Tester
+* **Pengalaman**: Minimal 1 tahun berkecimpung di bidang keamanan cyber, atau aktif mengikuti program Bug Bounty (memiliki reputasi profil publik) atau aktif mengikuti kompetisi Capture The Flag (CTF).
+* **Keahlian Teknis**:
+  - Memahami dasar kerentanan OWASP Top 10 secara praktis.
+  - Familiar dengan alat pentest standar seperti Burp Suite, Nmap, Metasploit, SQLmap.
+  - Mampu melakukan penulisan laporan temuan awal dalam format bahasa Indonesia dan bahasa Inggris dasar.
+* **Sertifikasi**: eJPT atau sertifikasi sejenis menjadi nilai tambah yang sangat besar.
+
+### 👨‍💼 Senior Penetration Tester
+* **Pengalaman**: Minimal 3-5 tahun sebagai pentester profesional atau konsultan keamanan informasi.
+* **Keahlian Teknis**:
+  - Menguasai *Source Code Review* (analisis kode sumber secara manual untuk menemukan kerentanan logika).
+  - Menguasai pengujian lingkungan *Active Directory* (AD) dan jaringan internal berskala besar.
+  - Mampu menulis exploit kustom sendiri dengan Python, C, atau Go.
+  - Mampu memimpin tim teknis, melakukan presentasi temuan di hadapan jajaran eksekutif, serta menjelaskan mitigasi bisnis yang efektif.
+* **Sertifikasi**: OSCP, PNPT, GPEN, CISSP, atau OSEP.
+
+---
+
+# Latihan Menggunakan Santa THM
+Bagi Anda yang ingin melihat penyelesaian tantangan Advent of Cyber dari TryHackMe, kami mendokumentasikannya di folder berikut:
+* [Day 1 - Writeup](Advent-THM-2022/day1.md)
+* [Day 2 - Writeup](Advent-THM-2022/day2.md)
+* [Day 3 - Writeup](Advent-THM-2022/day3.md)
+
+---
+<div align="center">
+  <p><strong>Mari bersama tingkatkan ketahanan siber Indonesia! Tetap haus akan ilmu dan jangan pernah lelah berbagi. 🇮🇩</strong></p>
+  <p>© Kamar Kamsib</p>
+</div>
