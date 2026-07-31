@@ -32,6 +32,7 @@ Kontributor utama repositori ini:
 5. [05. Tahapan Umum Penetration Testing](#05-tahapan-umum-penetration-testing)
 6. [06. OWASP Top 10 2021 & Skenario Serangan](#06-owasp-top-10-2021--skenario-serangan)
 7. [07. Peta Jalan Menjadi Pentester Profesional](#07-peta-jalan-menjadi-pentester-profesional)
+* **[Dark-Moon](https://github.com/ASCIT31/Dark-Moon)** — Platform open-source (GPL-3.0) untuk penetration testing otomatis berbasis agen AI (web, API, Active Directory, Kubernetes); di-host sendiri dan dilengkapi Privacy Gateway lokal yang menyamarkan data sensitif sehingga LLM tidak pernah melihat nilai aslinya.
 8. [99. Referensi Kumpulan Payload Terpopuler](#99-referensi-kumpulan-payload-terpopuler)
 9. [100. Analisis Persyaratan Pekerjaan Pentester](#100-analisis-persyaratan-pekerjaan-pentester)
 10. [🎄 Latihan Tambahan (Advent of Cyber Writeups)](#latihan-menggunakan-santa-thm)
